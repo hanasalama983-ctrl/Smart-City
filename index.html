@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City - Admin Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <!-- LOGO -->
+            <div class="logo">
+                <div class="logo">
+    <img src="images/smart-city-shield-logo.png" alt="Smart City Logo">
+</div>
+                    <defs>
+                        <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#b9faff"/>
+                            <stop offset="50%" stop-color="#087fa8"/>
+                            <stop offset="100%" stop-color="#03445f"/>
+                        </linearGradient>
+
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="4" result="blur"/>
+                            <feMerge>
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <ellipse cx="100" cy="105" rx="91" ry="24"
+                        transform="rotate(-22 100 105)"
+                        fill="none" stroke="#36eaff"
+                        stroke-width="3" filter="url(#glow)"/>
+
+                    <path d="M100 12 L165 40 L158 112 Q150 155 100 185 Q50 155 42 112 L35 40 Z"
+                        fill="url(#shield)" stroke="#63efff"
+                        stroke-width="4" filter="url(#glow)"/>
+
+                    <path d="M78 91 V73 Q78 48 100 48 Q122 48 122 73 V91"
+                        fill="none" stroke="#8ff5ff"
+                        stroke-width="11" stroke-linecap="round"/>
+
+                    <rect x="68" y="84" width="64" height="55"
+                        rx="9" fill="#1686aa"
+                        stroke="#b0faff" stroke-width="3"/>
+
+                    <circle cx="100" cy="105" r="7" fill="#06334e"/>
+
+                    <path d="M97 109 L94 124 H106 L103 109 Z"
+                        fill="#06334e"/>
+                </svg>
+            </div>
+
+            <!-- TITLE -->
+            <h1>Admin <span>Login</span></h1>
+
+            <!-- LOGIN FORM -->
+            <form id="loginForm">
+
+                <div class="input-box">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" placeholder="Email or User ID" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <i class="fa-regular fa-eye eye-icon" onclick="togglePassword()"></i>
+                </div>
+
+                <div class="options">
+
+                    <label>
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+                    <a href="#">Forget password ?</a>
+
+                </div>
+
+                <button type="submit">Log In</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+   <script>
+    function togglePassword() {
+        const password = document.getElementById("password");
+
+        password.type = password.type === "password"
+            ? "text"
+            : "password";
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        window.location.href = "dashboard.html";
+    });
+</script>
+
+</body>
+</html>
